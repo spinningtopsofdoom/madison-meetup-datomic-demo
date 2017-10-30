@@ -23,13 +23,20 @@
    [9  :person/pet   10                     45]
    [10 :pet/name     "Mr. Whiskers"         45]])
 
-;; Get all pet name's
+;; All pet name's
 (d/q '[:find ?pet-name
        :where [?pet :pet/name ?pet-name]]
      vdb)
-;; Get all pet's and owners
+
+;; All pet's and owners
 (d/q '[:find ?name ?pet-name
        :where [?person :person/name ?name]
               [?person :person/pet ?pet]
               [?pet :pet/name ?pet-name]]
+     vdb)
+
+;; All children
+(d/q '[:find ?name
+       :where [?child :person/name ?name]
+              [_ :person/child ?child]]
      vdb)
