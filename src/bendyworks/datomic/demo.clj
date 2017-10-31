@@ -40,3 +40,22 @@
        :where [?child :person/name ?name]
               [_ :person/child ?child]]
      vdb)
+
+;; All person id's
+(d/q '[:find ?person
+       :where [?person :person/name]]
+     vdb)
+
+;; All person attributes
+(d/q '[:find ?attr
+       :where [?person :person/name]
+              [?person ?attr]]
+     vdb)
+
+;; All child relations when Laura was created
+(d/q '[:find ?parent-name ?child-name
+       :where [_ :person/name "Laura" ?tx]
+              [?parent :person/child ?child ?tx]
+              [?parent :person/name ?parent-name]
+              [?child :person/name ?child-name]]
+     vdb)
