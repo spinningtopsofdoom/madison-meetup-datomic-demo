@@ -59,3 +59,19 @@
               [?parent :person/name ?parent-name]
               [?child :person/name ?child-name]]
      vdb)
+
+;; Database rules for recursive query
+(def ancestors-rule
+  '[[(ancestors ?parent ?child)
+     [?parent :person/child ?child]]
+    [(ancestors ?grand-parent ?parent)
+     [?grand-parent :person/child ?child]
+     (ancestors ?child ?parent)]])
+
+;; Find all people who are ancestors
+(d/q '[:find ?name
+       :in $ %
+       :where [?person :person/name]
+              [ancestors ?ancestors ?person]
+              [?ancestors :person/name ?name]]
+     vdb ancestors-rule)
