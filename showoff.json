@@ -1,0 +1,6 @@
+{ "name": "Datmoic - The Immutable Database",
+  "highlight": "github",
+  "sections": [
+      {"section":"meetup/intro"},
+      {"section":"meetup/outro"}
+  ]}
