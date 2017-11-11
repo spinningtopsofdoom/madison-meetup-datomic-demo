@@ -2,5 +2,9 @@
   "highlight": "github",
   "sections": [
       {"section":"meetup/intro"},
+      {"section":"meetup/query-everything"},
+      {"section":"meetup/alacarte-schema"},
+      {"section":"meetup/always-growing"},
+      {"section":"meetup/reified-transactions"},
       {"section":"meetup/outro"}
   ]}
