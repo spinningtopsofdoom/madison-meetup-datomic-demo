@@ -10,6 +10,8 @@ There's the everyday querying of entities (records) and attribute values. Symbol
            :where [?person :person/name "Alice"]]
       db)
 
+<br />
+
     @@@clojure
     ;; Gets the name for entity with id of 12 ("Alice")
     (d/q '[:find ?name
@@ -52,7 +54,8 @@ All of the database attributes are queryable
 Joins happen when the same variable used in different clauses
 
     @@@clojure
-    ;; Gets the all attributes connected to :person/name (:person/name :person/likes)
+    ;; Gets the all attributes connected to
+    ;; :person/name (:person/name :person/likes)
     (d/q '[:find ?attr-name
           :where [?reference :person/name]
                  [?reference ?attribute]

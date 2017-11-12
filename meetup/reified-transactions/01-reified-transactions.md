@@ -1,4 +1,4 @@
-Transactions are real
+Transactions are real and easily accessible
 
 !SLIDE
 
@@ -51,3 +51,18 @@ We can retrieve this transaction information
     ;; Transaction information
     [[:auditor/name "bob"]
      [:db/txInstant #inst "2017-11-02T20:41:09.339-00:00"]]
+
+!SLIDE
+
+Transactions can be monitored
+
+    @@@clojure
+    ;; Create a transaction queue
+    (def tx-queue
+      (d/tx-report-queue connection))
+
+<br />
+
+    @@@clojure
+    ;; Retrieves a transaction sent to the database
+    (.poll tx-queue)
