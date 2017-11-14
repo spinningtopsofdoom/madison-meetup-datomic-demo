@@ -1,8 +1,8 @@
-Schema is Ala Carte
+# Schema is Ala Carte
 
 !SLIDE
 
-Typical entity (record) creation
+## Typical entity (record) creation
 
     @@@clojure
     ;; Adds Alice entity to the database
@@ -11,7 +11,7 @@ Typical entity (record) creation
 
 !SLIDE
 
-Datomic entity can contain any attributes or combination of attributes
+## Datomic entity can contain any attributes or combination of attributes
 
     @@@clojure
     ;; Adds Alice name to the database
@@ -23,7 +23,6 @@ Datomic entity can contain any attributes or combination of attributes
     @@@clojure
     ;; Adds Alice entity to the database
     (d/transact connection [{:person/name  "Alice"
-                             :person/likes "pizza"
                              :person/age   34}])
 <br />
 
@@ -35,9 +34,11 @@ Datomic entity can contain any attributes or combination of attributes
 
 !SLIDE
 
-Entities (records) are not confined to a table row or a document. Attributes are the atom's of the schema
+## Attributes are the atom's of the schema
+### Entities (records) are not confined to a table row or a document.
 
     @@@clojure
+    ;; Add an attribute to Datomic
     (d/transact connection
       [{:db/ident       :person/name
         :db/valueType   :db.type/string
@@ -46,12 +47,12 @@ Entities (records) are not confined to a table row or a document. Attributes are
 
 !SLIDE
 
-We get an easy incremental schema, incredible flexibility adding data to our database, and a rich query language.
+## We get an easy incremental schema, incredible flexibility adding data to our database, and a rich query language.
 
 !SLIDE
 
-Bonus: Temporary entity references
-`:db.id` assigns a temporary entity id that other entities in the transaction can use as a reference.
+## Bonus: Temporary entity references
+### `:db.id` assigns a temporary entity id that other entities in the transaction can use as a reference.
 
 	@@@clojure
 	(d/transact connection
