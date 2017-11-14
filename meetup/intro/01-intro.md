@@ -86,7 +86,7 @@
 
 # Datomic Solutions
 
-* Everything Queryable
+* Everything is Queryable
 * Ala carte Schema
 * Always Grow
 * Transactions Fully Realized

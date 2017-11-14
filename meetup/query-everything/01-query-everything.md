@@ -1,8 +1,9 @@
-In Datomic everything is queryable
+# Everything is Queryable
 
 !SLIDE
 
-There's the everyday querying of entities (records) and attribute values. Symbols with `<?*>` are variables to be filled in by the query
+## There's the everyday querying of entities (records) and attribute values.
+### Symbols with `<?*>` are variables to be filled in by the query
 
     @@@clojure
     ;; Gets the Alice's entity identifier (12)
@@ -20,7 +21,7 @@ There's the everyday querying of entities (records) and attribute values. Symbol
 
 !SLIDE
 
-You can also get of attributes with the same pattern
+## You can also get all attributes of an entity
 
     @@@clojure
     ;; Gets the all attributes and values for entity with id of 12
@@ -31,7 +32,7 @@ You can also get of attributes with the same pattern
 
 !SLIDE
 
-`_`'s in a where clause means you don't care about the value
+## `_`'s in a where clause means you don't care about the value
 
     @@@clojure
     ;; Gets the all attributes that have alice as a value (:person/name)
@@ -41,7 +42,7 @@ You can also get of attributes with the same pattern
 
 !SLIDE
 
-All of the database attributes are queryable
+## All of the database attributes are queryable
 
     @@@clojure
     ;; Gets the all attributes in the database (even system level ones)
@@ -51,7 +52,17 @@ All of the database attributes are queryable
 
 !SLIDE
 
-Joins happen when the same variable used in different clauses
+## Joins happen when the same variable used in different clauses
+
+
+    @@@clojure
+    ;; Find what Alice likes
+    (d/q '[:find ?alikes
+           :where [?person :person/name "Alice"]
+                  [?person :person/likes ?likes]
+        db)
+
+<br />
 
     @@@clojure
     ;; Gets the all attributes connected to
@@ -64,7 +75,7 @@ Joins happen when the same variable used in different clauses
 
 !SLIDE
 
-Bonus: You can query plain data
+## Bonus: You can query plain data
 
     @@@clojure
     ;; Gets the all attributes and values for entity with id of 12
