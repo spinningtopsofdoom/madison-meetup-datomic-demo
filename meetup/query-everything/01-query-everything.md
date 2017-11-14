@@ -61,3 +61,15 @@ Joins happen when the same variable used in different clauses
                  [?reference ?attribute]
                  [?attribute :db/ident ?attr-name]]
       db)
+
+!SLIDE
+
+Bonus: You can query plain data
+
+    @@@clojure
+    ;; Gets the all attributes and values for entity with id of 12
+    ;; ([:person/name "Alice"] [:person/likes "pizza"])
+    (d/q '[:find ?attribute ?name
+           :where [12 ?attribute ?name]]
+      [[12 :perons/name "Alice"]i
+       [12 :person/likes "pizza"]])

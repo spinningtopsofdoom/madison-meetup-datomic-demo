@@ -67,41 +67,56 @@ Removing an attribute value creates a new database
 
 !SLIDE
 
+<div/>
 # Starting Database
 
 ![Initial Database](../../images/datomic-initial.png)
 
 !SLIDE
 
+<div/>
 # Salad Database
 
 ![Salad Database](../../images/datomic-salad.png)
 
 !SLIDE
 
+<div/>
 # No Likes Database
 
 ![No Likes Database](../../images/datomic-no-likes.png)
 
 !SLIDE
 
-# Writes don't block queries
+# Writes add facts never delete or overwrite
 
 !SLIDE
 
+<div/>
 # Query Starting Database
 
 ![Initial Database Query](../../images/datomic-initial-query.png)
 
 !SLIDE
 
-# Salad Database
+<div/>
+# Adding salad is orthogonal
 
 ![Salad Database](../../images/datomic-salad-query.png)
 
 !SLIDE
 
-# No Likes Database
+<div/>
+# Writes don't block reads
 
 ![No Likes Database](../../images/datomic-no-likes-query.png)
 
+
+!SLIDE
+
+# Reads
+
+* Unlimited
+* Stable
+* Not blocked by writes
+* Can run as long as needed

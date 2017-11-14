@@ -15,7 +15,15 @@
 
 !SLIDE
 
-# what problems does Datomic solve?
+# Datomic Marketing
+
+## - fully transactional
+## - cloud-ready
+## - distributed database.
+
+!SLIDE
+
+# What problems does Datomic solve?
 
 !SLIDE
 
@@ -28,7 +36,6 @@
 
 # Wiring up relationships
 ## Relationships work one way
-
 
     @@@sql
     SELECT i.*
@@ -50,16 +57,36 @@
 
 !SLIDE
 
-# Table Oriented Data Entry
+# Lazy Load (N + 1) ^ M
+## Eager load means constructing large query
+
+    @@@ruby
+    user.map(&:orders).flat_map(&:line_items).flat_map(&:items)
 
 !SLIDE
 
-# Querying Via Strings
+# Table Oriented Structure
+
+## `user` must have all fields in `Users` table
+## Adding fields from other tables requires a relationship between the tables
 
 !SLIDE
 
-# Needing to retrieve everything in one go
+# Creating multiple related records
+## ActiveRecord Needed
+
+    @@@ruby
+    eggs = Item.new(name: "eggs")
+    bread = Item.new(name: "bread")
+    line_items = LineItem.new(items: [eggs, bread])
+    order = Order.new(user: user, line_items: line_items)
+    order.save
 
 !SLIDE
 
-# Lazy Loading vs eager loading
+# Datomic Solutions
+
+* Everything Queryable
+* Ala carte Schema
+* Always Grow
+* Transactions Fully Realized
