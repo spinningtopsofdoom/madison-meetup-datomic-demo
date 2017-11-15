@@ -57,7 +57,7 @@
 
     @@@clojure
     ;; Find what Alice likes
-    (d/q '[:find ?alikes
+    (d/q '[:find ?likes
            :where [?person :person/name "Alice"]
                   [?person :person/likes ?likes]
         db)

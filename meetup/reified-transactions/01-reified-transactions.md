@@ -1,8 +1,10 @@
-Transactions are real and easily accessible
+
+# Fully realized Transactions
+## Transactions are easily accessible
 
 !SLIDE
 
-Each transaction gives the transaction data
+# Each transaction gives the transaction data
 
     @@@clojure
     (d/transact conn [{:person/name "Alice"
@@ -14,7 +16,8 @@ Each transaction gives the transaction data
 
 !SLIDE
 
-Each transaction is marked in the database as a transaction id. We can retrieve all items added in a transaction by querying it `?tx`
+# Each transaction is marked in the database as a transaction id.
+## We can retrieve all items added in a transaction by querying it `?tx`
 
 	@@@clojure
 	(d/q '[:find ?entity ?attr-name ?value
@@ -29,7 +32,7 @@ Each transaction is marked in the database as a transaction id. We can retrieve 
 
 !SLIDE
 
-Arbitrary information can be added onto the transaction
+# Arbitrary information can be added onto the transaction
 
 	@@@clojure
 	(d/transact conn [{:person/name "Alice"
@@ -39,7 +42,7 @@ Arbitrary information can be added onto the transaction
 
 !SLIDE
 
-We can retrieve this transaction information
+# We can retrieve this transaction information
 
 	@@@clojure
 	(d/q '[:find ?attr-name ?value
@@ -54,7 +57,7 @@ We can retrieve this transaction information
 
 !SLIDE
 
-Transactions can be monitored
+# Transactions can be monitored
 
     @@@clojure
     ;; Create a transaction queue
