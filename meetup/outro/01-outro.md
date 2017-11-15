@@ -9,7 +9,7 @@
 !SLIDE
 
 ## Datomic occupies a pretty unique space in database land
-### Has great solutions more databases should copy`
+### Has great solutions more databases should copy
 
 !SLIDE
 
