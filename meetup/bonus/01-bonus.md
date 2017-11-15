@@ -1,4 +1,8 @@
-Entities can be navigated like objects
+# Bonus Round
+
+!SLIDE
+
+# Entities can be navigated like objects
 
     @@@clojure
     (def alice
@@ -9,7 +13,7 @@ Entities can be navigated like objects
 
 !SLIDE
 
-Get values just like an object
+# Get values just like an object
 
     @@@clojure
     (get alice :food/likes "mushrooms") ;; pizza
@@ -18,7 +22,7 @@ Get values just like an object
 
 !SLIDE
 
-Act like a graph database
+# Acts like a graph database
 
     @@@clojure
     ;; All the people alice likes
