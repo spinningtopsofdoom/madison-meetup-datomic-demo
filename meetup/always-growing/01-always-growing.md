@@ -1,16 +1,16 @@
-Datomic always grows
+# Datomic always growing
 
 !SLIDE
 
-No data is ever removed from Datomic, it only accumulates data, never updating or erasing it
+## No data is ever removed from Datomic, it only accumulates data, never updating or erasing it
 
 !SLIDE
 
-Does this mean we can never erase or update anything?
+## Does this mean we can never erase or update anything?
 
 !SLIDE
 
-A new database is created for each transaction
+## A new database is created for each transaction
 
     @@@clojure
     ;; Creates db-initial
@@ -29,7 +29,7 @@ A new database is created for each transaction
 
 !SLIDE
 
-Changing a attribute value creates a new database
+## Changing a attribute value creates a new database
 
 
     @@@clojure
@@ -49,7 +49,7 @@ Changing a attribute value creates a new database
 
 !SLIDE
 
-Removing an attribute value creates a new database
+## Removing an attribute value creates a new database
 
     @@@clojure
     ;; Creates db-no-likes
